@@ -40,20 +40,19 @@ public class Game {
                     var.check = false;
             }
 
-            for (int i = 0; i < var.guess.length; i++) {
-                if (!var.check) {
-                    System.out.println("\nHuruf sudah digunakan!");
-                }
+            if (!var.check)
+                System.out.println("\nHuruf sudah digunakan!");
 
+            for (int i = 0; i < var.guess.length; i++) {
                 if (var.character == var.word.toLowerCase().charAt(i) && var.check) {
                     var.count++;
                     var.right = true;
                     var.guess[i] = var.character;
                     var.sudah.add(var.character);   
                 }
-                var.check = true;
             }
-            
+
+            var.check = true;
 
             if (var.right) {
                 System.out.printf("\nTebakan huruf benar, huruf yang ditebak: %c\n", var.character);
@@ -65,7 +64,15 @@ public class Game {
                 var.salah.add(var.character);
                 System.out.print("\nTebakan huruf salah, berikut huruf-huruf yang salah: ");
                 for (int i = 0; i < var.salah.size(); i++) {
-                    System.out.printf("%c ", var.salah.get(i));
+                    if (i > 0) {
+                        if (var.salah.get(i) == var.salah.get(i - 1)) {
+                            // do absolutely nothing
+                        } else {
+                            System.out.printf("%c ", var.salah.get(i));
+                        }
+                    } else {
+                        System.out.printf("%c ", var.salah.get(i));
+                    }
                 }
             }
 

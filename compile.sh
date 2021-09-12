@@ -17,12 +17,13 @@ if hash javac 2>/dev/null; then
         src/com/irvanma/input \
         src/com/irvanma/levels \
         src/com/irvanma/graphic;
-    mkdir dist;
+    [ ! -d dist/ ] && mkdir dist 
     mv JavaHangman.jar dist/JavaHangman.jar;
     echo "Deleting leftovers...";
     rm -rf *.class \
         src/com/irvanma/*.class \
         src/com/irvanma/input/*.class \
+        src/com/irvanma/graphic/*.class \
         src/com/irvanma/levels/*.class;
     echo "Script succeeded.";
 else

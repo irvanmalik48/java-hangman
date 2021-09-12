@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import src.com.irvanma.input.Input;
 import src.com.irvanma.levels.Levels;
+import src.com.irvanma.graphic.Graphic;
 
 public class Game {
     public static void launch() throws IOException {
@@ -62,6 +63,7 @@ public class Game {
             } else {
                 var.nyawa--;
                 var.salah.add(var.character);
+                Graphic.hangTheMan(var.nyawa);
                 System.out.print("\nTebakan huruf salah, berikut huruf-huruf yang salah: ");
                 for (int i = 0; i < var.salah.size(); i++) {
                     if (i > 0) {

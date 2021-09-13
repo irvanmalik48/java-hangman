@@ -6,6 +6,8 @@ This is a lecture assignment anyways.
 
 ## Quickstart
 
+### Linux
+
 ```bash
 chmod +x compile.sh
 ./compile.sh
